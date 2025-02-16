@@ -2,7 +2,7 @@ import type React from "react"
 import { useNavigate } from "react-router-dom"
 import { Bell, Bookmark, Home, ImageIcon, Link, ListVideo, Mail, Pencil, Search, Twitter, User2 } from "lucide-react"
 import TweetCard from "./TweetCard"
-
+import Avatar from "./Avatar"
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate()
@@ -69,7 +69,9 @@ const HomePage: React.FC = () => {
 
           <div className="p-4 border-b border-gray-800 hidden md:block">
             <div className="flex gap-4">
-              <div className="w-12 h-12 rounded-full bg-gray-600"></div>
+              <div className="w-12 h-12 rounded-full bg-gray-600">
+                <Avatar src="/default-avatar.png" alt="Your avatar" />
+              </div>
               <div className="flex-1">
                 <input
                   className="bg-transparent border-none text-lg w-full focus:outline-none"
@@ -111,7 +113,7 @@ const HomePage: React.FC = () => {
               verified={true}
               time="2h"
               content="Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land"
-              image="/placeholder.svg"
+              image="../../images/1.png"
               comments="19"
               retweets="48"
               likes="482"
@@ -141,7 +143,7 @@ const HomePage: React.FC = () => {
                 {["The New York Times", "CNN", "Twitter"].map((name) => (
                   <div key={name} className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-10 h-10 rounded-full bg-gray-600"></div>
+                      <Avatar src="/default-avatar.png" alt={name} size="sm" />
                       <div>
                         <p className="font-bold">{name}</p>
                         <p className="text-sm text-gray-500">@{name.toLowerCase().replace(/\s/g, "")}</p>

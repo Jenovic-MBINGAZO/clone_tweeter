@@ -2,5 +2,6 @@
 
 
 body {
-  @apply bg-black text-white;
+  background-color: black;
+  color: white;
 }

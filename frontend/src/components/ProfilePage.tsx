@@ -1,6 +1,7 @@
 import type React from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { ArrowLeft } from "lucide-react"
+import Avatar from "./Avatar"
 
 const ProfilePage: React.FC = () => {
   const { username } = useParams<{ username: string }>()
@@ -21,7 +22,9 @@ const ProfilePage: React.FC = () => {
 
         <div className="relative">
           <div className="h-48 bg-gray-700"></div>
-          <div className="absolute bottom-0 left-4 transform translate-y-1/2 w-32 h-32 rounded-full border-4 border-black bg-gray-600"></div>
+          <div className="absolute bottom-0 left-4 transform translate-y-1/2">
+            <Avatar src="/default-avatar.png" alt={username || "User"} size="lg" />
+          </div>
         </div>
 
         <div className="mt-20 p-4">

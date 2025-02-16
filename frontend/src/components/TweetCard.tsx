@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { MessageCircle, MoreHorizontal, Share2, Star } from "lucide-react"
+import Avatar from "./Avatar"
 
 interface TweetCardProps {
   avatar: string
@@ -46,7 +47,7 @@ const TweetCard: React.FC<TweetCardProps> = ({
     <div className="p-4 border-b border-gray-800 hover:bg-gray-900/50">
       <div className="flex gap-4">
         <Link to={`/${handle.slice(1)}`}>
-          <div className="w-12 h-12 rounded-full bg-gray-600"></div>
+          <Avatar src={avatar} alt={name} />
         </Link>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
@@ -65,7 +66,7 @@ const TweetCard: React.FC<TweetCardProps> = ({
           <p className="mt-2 break-words">{content}</p>
           {image && (
             <div className="mt-4 rounded-xl overflow-hidden">
-              <img src="../../images/1.png" alt="Tweet image" className="w-full" />
+              <img src={image || "/placeholder.svg"} alt="Tweet image" className="w-full" />
             </div>
           )}
           <div className="flex justify-between mt-4 text-gray-500">
